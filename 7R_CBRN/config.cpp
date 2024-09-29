@@ -9,20 +9,15 @@ class CfgPatches
 		version="0.0.1";
 		requiredVersion=0.1;
 		requiredAddons[]={
-		
+			"ace_common",
+			"ace_fire",
+			"ace_medical_treatment",
+			"CBRN_Compat_ACE"
 		};
-		author="Dextro";
+		author="Skitz";
 	};
 };
 
-class Extended_PreInit_EventHandlers {
-    class SR_GPS_PreInit {
-        init = "call compile preprocessFileLineNumbers '7R_CBRN\XEH_preInit.sqf'";
-    };
-};
-
-
-
-//#include "CfgGlasses.hpp"
 #include "CfgFunctions.hpp"
-#include "CfgVehicles.hpp"
+#include "ace_actions.hpp"
+#include "cfgWeapons.hpp"

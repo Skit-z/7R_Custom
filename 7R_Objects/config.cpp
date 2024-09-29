@@ -8,7 +8,7 @@ class CfgPatches
 		weapons[]={};
 		version="0.0.2";
 		requiredVersion=1.5599999;
-		requiredAddons[]= {};
+		requiredAddons[]= {"cba_main","us_military_uniforms"};
 		author="Dextro";
 		authorUrl="http://orbitalstrikeforce.com/";
 	};

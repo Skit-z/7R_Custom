@@ -19,16 +19,10 @@ _unit playAction "Gear";
 	// Parameter init
 	_this select 0 params ["_unit","_target"];
 
-	// Remove gas mask
-	removeGoggles _target;
-
 	// Add back previous normal googles and reset
 	private _previousGoggles = _target getVariable ["SR_CBRN_OldGoggles",""];
+	removeGoggles _target;
 	_target addGoggles _previousGoggles;
 	_target setVariable ["SR_CBRN_OldGoggles",""];
 
-	// Reset inconvinience for gas mask
-	_target setUnitTrait ["loadCoef", 0];
-	
-
-},{}, "Removeing Gasmask..."] call ace_common_fnc_progressBar;
+},{}, "Removing Gas Mask..."] call ace_common_fnc_progressBar;

@@ -6,8 +6,10 @@ class CfgFunctions
 		{
 			file = "7R_CBRN\functions";
 			class EquipGasmask {};
+			class EquipGasmaskPatient {};
 			class RemoveGasmask {};
-			class Statemachine {postInit = 1};
+			class checkExposureLevel {};
+			class checkEnvironment {};
 		};
 	};
 };

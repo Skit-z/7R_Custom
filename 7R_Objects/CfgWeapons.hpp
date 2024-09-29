@@ -144,5 +144,6 @@ class CfgWeapons {
             mass = 10;
 		};
 	};
+	#include "dhi_items.hpp"
 };
 

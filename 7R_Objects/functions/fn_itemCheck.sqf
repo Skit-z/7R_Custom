@@ -18,14 +18,15 @@ if (leader group _unit == _unit) then {
 while {({_x == "SR_PAK"} count items _unit) > 0} do {
     _unit removeItem "SR_PAK";
 	for "_i" from 1 to 6 do {
-				_unit addItem "ACE_fieldDressing";
+		_unit addItem "ACE_fieldDressing";
 	};
 	for "_i" from 1 to 4 do {
-				_unit addItem "ACE_quikclot";
+		_unit addItem "ACE_quikclot";
 	};
 	for "_i" from 1 to 2 do {
-				_unit addItem "ACE_morphine";
+		_unit addItem "ACE_morphine";
 	};
+	_unit addItem "ACE_ATNAA_AntidoteInjector";
 };
 
 while {({_x == "SR_MAK"} count items _unit) > 0} do {
@@ -41,6 +42,10 @@ while {({_x == "SR_MAK"} count items _unit) > 0} do {
 				_unit addItem _x;
 		};
 	}forEach ["ACE_morphine","ACE_epinephrine"];
+	// CBRN Antidote
+	for "_i" from 1 to 2 do {
+		_unit addItem "ACE_ATNAA_AntidoteInjector";
+	};
 	// Blood
 	for "_i" from 1 to 4 do {
 		_unit addItem "ACE_salineIV_500";
@@ -66,6 +71,10 @@ while {({_x == "SR_Medicine_Pack"} count items _unit) > 0} do {
 				_unit addItem _x;
 		};
 	}forEach ["ACE_morphine","ACE_epinephrine"];
+
+	for "_i" from 1 to 2 do {
+		_unit addItem "ACE_ATNAA_AntidoteInjector";
+	};
 };
 
 while {({_x == "SR_Utility_Pack"} count items _unit) > 0} do {

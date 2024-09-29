@@ -19,9 +19,13 @@ _unit playAction "Gear";
 	// Parameter init
 	_this select 0 params ["_unit","_target"];
 
+	//Retrieve gas mask className
+	private _gasMask = _target getVariable ["SR_CBRN_Mask", ""];
+	if (_gasMask == "") then {_gasMask = _unit getVariable ["SR_CBRN_Mask", "G_CBRN_M04"];};
+
 	// Remove and save normal goggles
 	private _currentGoggles = goggles _target;
-	removeGoggles _target;
+
 	if (local _target) then {
 		_target setVariable ["SR_CBRN_OldGoggles", _currentGoggles];
 	} else {
@@ -29,10 +33,6 @@ _unit playAction "Gear";
 	};
 
 	// Adds gas mask
-	_target addGoggles SR_CBRN_Mask;
+	_target addGoggles _gasMask;
 
-	// Add inconvinience for gas mask
-	_target setUnitTrait ["loadCoef", 0.25];
-	
-
-},{}, "Equiping Gasmask..."] call ace_common_fnc_progressBar;
+},{}, "Putting on Gas Mask..."] call ace_common_fnc_progressBar;
